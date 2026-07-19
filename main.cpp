@@ -1,0 +1,156 @@
+#include <iostream>
+#include <string>
+#include "personagem.hpp"
+#include "goblin.hpp"
+#include "orc.hpp"
+using namespace std;
+
+bool Batalha(Personagem& jogador, Personagem& inimigo);
+
+void MenuPrincipal(){
+
+
+    cout << "\n==== Menu ====" << endl;
+    cout << "=========================" << endl;
+    cout << "O que gostaria de fazer? " << endl;
+    cout << "1 - Ver status" << endl;
+    cout << "2 - Explorar a floresta" << endl;
+    cout << "3 - Descansar na estalagem" << endl;
+    cout << "4 - Sair" << endl;
+
+}
+
+void EntrarFloresta(Personagem& jogador){
+
+    cout << jogador.nome << " Entrou na floresta" << endl;
+    cout << "Um goblin apareceu! " << endl;
+    cout << endl;
+
+    Goblin goblin;
+
+    if (Batalha(jogador, goblin)){
+
+        cout << "Um orc apareceu!" << endl;
+        cout << endl;
+
+        Orc orc;
+        orc.MostrarStatus();
+        Batalha(jogador, orc);
+    }
+    
+}
+
+int EscolherAcao(){
+
+    int escolher;
+
+    cout << "O que gostaria de fazer? " << endl;
+    cout << "1- Atacar" << endl;
+    cout << "2 - Fugir" << endl;
+    cout << "Escolha sua opção: " << endl;
+    cin >> escolher;
+
+    return escolher;
+
+}
+
+bool Batalha(Personagem& jogador, Personagem& inimigo){
+
+    bool fugir = false;
+
+   while (jogador.EstadoVivo() && inimigo.EstadoVivo() && !fugir)
+   {
+        int EscolhaJogador = EscolherAcao();
+
+        switch (EscolhaJogador)
+        {
+        case 1:
+        {
+            jogador.Atacar(inimigo);
+
+            inimigo.MostrarStatus();
+
+            if (inimigo.EstadoVivo())
+            {
+                inimigo.Atacar(jogador);
+
+                jogador.MostrarStatus();
+            }
+
+            break;
+        }
+        case 2:
+            cout << jogador.nome << " fugiu" << endl;
+            fugir = true;
+            break;
+        default:
+            cout << "Opção inválida";
+            break;
+        }
+   }
+
+   if (!inimigo.EstadoVivo())
+   {
+        cout << jogador.nome << " venceu!" << endl;
+        return true;
+   }
+
+   return false;
+   
+}
+
+int main(){
+
+    cout << "===== Final Fantasy Text RPG Game ======" << endl;
+    string nome;
+    cout << "\nDigite o seu nome: ";
+    cin >> nome;
+    cout << "Bem-vindo " << nome << "!" << endl;
+    cout << "Sua aventura está prestes a começar :)" << endl;
+
+    Personagem jogador {
+        nome,
+        100,
+        8,
+        15,
+        10,
+        1,
+        0,
+        50
+    };
+
+    int opcao;
+
+    do
+    {
+
+        MenuPrincipal();
+
+        cout << "Escolha uma opção: ";
+        cin >> opcao;
+
+        switch (opcao)
+        {
+        case 1:
+            jogador.MostrarStatus();
+            break;
+        case 2:
+            EntrarFloresta(jogador);
+            cout << endl;
+            break;
+        case 3:
+            jogador.Descansar();
+            cout << endl;
+            break;
+        case 4:
+            cout << "Saindo..." << endl;
+            cout << endl;
+            break;
+        default:
+            cout << "Opção inválida, digite um numero valido" << endl;
+            cout << endl;
+            break;
+        }
+    } while (opcao != 4);
+    
+}
