@@ -27,6 +27,7 @@ void EntrarFloresta(Personagem& jogador){
     cout << endl;
 
     Goblin goblin;
+    goblin.MostrarStatus();
 
     if (Batalha(jogador, goblin)){
 
@@ -92,6 +93,8 @@ bool Batalha(Personagem& jogador, Personagem& inimigo){
    if (!inimigo.EstadoVivo())
    {
         cout << jogador.nome << " venceu!" << endl;
+        jogador.GanharXP(inimigo.xp);
+        jogador.SubirNivel(inimigo.nivel);
         return true;
    }
 

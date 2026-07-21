@@ -88,7 +88,7 @@ class Personagem{
 
         int dano = CalcularDano(inimigo);
 
-        cout << nome << " atacou." << inimigo.nome << "!" << endl;
+        cout << nome << " atacou " << inimigo.nome << "!" << endl;
 
         inimigo.ReceberDano(dano);
 
@@ -96,5 +96,33 @@ class Personagem{
         {
             cout << "O inimigo " << inimigo.nome << " foi derrotado" << endl;
         }
+    };
+
+    void GanharXP(int quantidade){
+
+        xp += quantidade;
+
+        cout << nome << " ganhou " << quantidade << " de xp" << endl;
+
+        int XpNecessario;
+        XpNecessario = nivel * 10;
+
+        while (xp >= XpNecessario)
+        {
+            xp -= XpNecessario;
+            
+            nivel++;
+
+            hp += 2;
+            mp += 3;
+            ataque += 5;
+            defesa += 6;
+
+            cout << nome << " subiu para o nivel: " << nivel << endl;
+
+            XpNecessario = nivel * 10;
+        }
+        
+        
     };
 };
