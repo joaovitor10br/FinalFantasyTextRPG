@@ -5,7 +5,7 @@
 #include "personagem.hpp"
 using namespace std;
 
-class Lobo : Personagem {
+class Lobo : public Personagem {
 
     public:
 

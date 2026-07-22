@@ -3,6 +3,7 @@
 #include "personagem.hpp"
 #include "goblin.hpp"
 #include "orc.hpp"
+#include "floresta.hpp"
 using namespace std;
 
 bool Batalha(Personagem& jogador, Personagem& inimigo);
@@ -22,12 +23,10 @@ void MenuPrincipal(){
 
 void EntrarFloresta(Personagem& jogador){
 
-    cout << jogador.nome << " Entrou na floresta" << endl;
-    cout << "Um goblin apareceu! " << endl;
-    cout << endl;
+    Floresta floresta;
+    floresta.Explorar(jogador);
 
     Goblin goblin;
-    goblin.MostrarStatus();
 
     if (Batalha(jogador, goblin)){
 
@@ -94,7 +93,6 @@ bool Batalha(Personagem& jogador, Personagem& inimigo){
    {
         cout << jogador.nome << " venceu!" << endl;
         jogador.GanharXP(inimigo.xp);
-        jogador.SubirNivel(inimigo.nivel);
         return true;
    }
 
