@@ -20,24 +20,10 @@ void MenuPrincipal(){
 
 }
 
-void EntrarFloresta(Personagem& jogador){
+void ExplorarFloresta(Personagem& jogador){
 
     Floresta floresta;
     floresta.Explorar(jogador);
-
-    Goblin goblin;
-    Batalha batalha;
-
-    if (batalha.IniciarBatalha(jogador, goblin)){
-
-        cout << "Um orc apareceu!" << endl;
-        cout << endl;
-
-        Orc orc;
-        orc.MostrarStatus();
-        batalha.IniciarBatalha(jogador, orc);
-    }
-    
 }
 
 int main(){
@@ -76,7 +62,8 @@ int main(){
             jogador.MostrarStatus();
             break;
         case 2:
-            EntrarFloresta(jogador);
+            Floresta floresta;
+            floresta.Explorar(jogador);
             cout << endl;
             break;
         case 3:
