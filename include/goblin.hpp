@@ -1,10 +1,7 @@
 #pragma once
 
 
-#include <iostream>
-#include <string>
 #include "personagem.hpp"
-using namespace std;
 
 class Goblin : public Personagem{
 
