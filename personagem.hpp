@@ -15,7 +15,7 @@ public:
     int ouro;
 
     Personagem(
-        string nome,
+        std::string nome,
         int hp,
         int mp,
         int ataque,
