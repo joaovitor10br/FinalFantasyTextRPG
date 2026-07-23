@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include "personagem.hpp"
-using namespace std;
 
 class Orc : public Personagem {
     
@@ -11,13 +10,13 @@ class Orc : public Personagem {
 
     Orc() : Personagem(
         "Orc", 
-        120, 
+        70, 
+        18, 
+        8, 
         20, 
-        25, 
-        10, 
         2, 
-        30, 
-        50)
+        20, 
+        15)
     {
     }
 };

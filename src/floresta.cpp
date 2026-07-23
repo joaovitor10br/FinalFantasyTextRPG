@@ -14,6 +14,7 @@ void Floresta::Explorar(Personagem& jogador){
     cout << endl;
 
     Goblin goblin;
+    Lobo lobo;
     Batalha batalha;
 
     if (batalha.IniciarBatalha(jogador, goblin))
@@ -21,9 +22,19 @@ void Floresta::Explorar(Personagem& jogador){
         cout << "Um lobo apareceu!" << endl;
         cout << endl;
 
-        Lobo lobo;
         lobo.MostrarStatus();
         batalha.IniciarBatalha(jogador, lobo);
+
+        if (batalha.IniciarBatalha(jogador, lobo))
+    {
+        cout << "Um orc apareceu!" << endl;
+        cout << endl;
+
+        Orc orc;
+        orc.MostrarStatus();
+        batalha.IniciarBatalha(jogador, orc);
     }
+    }
+    
     
 }
