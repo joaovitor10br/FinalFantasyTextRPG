@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int EscolherAcao(){
+int Batalha::EscolherAcao(){
 
     int escolher;
 
@@ -16,7 +16,7 @@ int EscolherAcao(){
 
 }
 
-bool IniciarBatalha(Personagem& jogador, Personagem& inimigo){
+bool Batalha::IniciarBatalha(Personagem& jogador, Personagem& inimigo){
 
     bool fugir = false;
 
