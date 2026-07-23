@@ -10,10 +10,10 @@ class Orc : public Personagem {
 
     Orc() : Personagem(
         "Orc", 
-        70, 
-        18, 
-        8, 
-        20, 
+        55, 
+        0, 
+        16, 
+        10, 
         2, 
         20, 
         15)
