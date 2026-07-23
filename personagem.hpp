@@ -1,8 +1,11 @@
+#pragma once
+#include <string>
+
 class Personagem{
 
 public:
 
-    string nome;
+    std::string nome;
     int hp;
     int mp;
     int ataque;
