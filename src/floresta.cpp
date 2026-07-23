@@ -15,6 +15,7 @@ void Floresta::Explorar(Personagem& jogador){
 
     Goblin goblin;
     Lobo lobo;
+    Orc orc;
     Batalha batalha;
 
     if (batalha.IniciarBatalha(jogador, goblin))
@@ -34,6 +35,4 @@ void Floresta::Explorar(Personagem& jogador){
         batalha.IniciarBatalha(jogador, orc);
     }
     }
-    
-    
 }
