@@ -13,7 +13,7 @@ class Lobo : public Personagem {
         "Lobo",
         40,
         0,
-        15,
+        13,
         5,
         1,
         10,

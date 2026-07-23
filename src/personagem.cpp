@@ -66,7 +66,7 @@ int Personagem::CalcularDano(const Personagem& inimigo) const{
 
     void Personagem::Descansar(){
 
-        hp = 50;
+        hp = 50 + ((nivel + 1) * 5);
         mp = 20;
 
         cout << nome << " entrou na hospedaria" << endl;
@@ -104,7 +104,7 @@ int Personagem::CalcularDano(const Personagem& inimigo) const{
             
             nivel++;
 
-            hp += 2;
+            hp += 5;
             mp += 3;
             ataque += 5;
             defesa += 6;
