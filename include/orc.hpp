@@ -11,13 +11,13 @@ class Orc : public Personagem {
 
     Orc() : Personagem(
         "Orc", 
-        100, 
+        120, 
         20, 
-        30, 
-        40, 
-        2, 
+        25, 
         10, 
-        45)
+        2, 
+        30, 
+        50)
     {
     }
 };

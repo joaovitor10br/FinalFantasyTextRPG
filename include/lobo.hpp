@@ -11,13 +11,13 @@ class Lobo : public Personagem {
 
     Lobo() : Personagem(
         "Lobo",
-        10,
+        40,
+        0,
+        15,
         5,
-        5,
-        3,
         1,
-        2,
-        10)
+        10,
+        8)
     {
     }
 };

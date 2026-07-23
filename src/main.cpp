@@ -37,13 +37,13 @@ int main(){
 
     Personagem jogador {
         nome,
-        100,
-        8,
-        15,
+        50,
+        20,
         10,
+        8,
         1,
         0,
-        50
+        30
     };
 
     int opcao;

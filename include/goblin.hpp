@@ -12,13 +12,13 @@ class Goblin : public Personagem{
         Goblin() 
         : Personagem(
             "Goblin", 
-            10, 
+            25, 
             0, 
-            20, 
-            5, 
+            12, 
+            3, 
             1, 
             6, 
-            4)
+            5)
     {
     }
 };

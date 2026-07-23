@@ -1,6 +1,7 @@
 #include "floresta.hpp"
 #include "goblin.hpp"
 #include "orc.hpp"
+#include "lobo.hpp"
 #include "batalha.hpp"
 
 #include <iostream>
@@ -17,12 +18,12 @@ void Floresta::Explorar(Personagem& jogador){
 
     if (batalha.IniciarBatalha(jogador, goblin))
     {
-        cout << "Um orc apareceu!" << endl;
+        cout << "Um lobo apareceu!" << endl;
         cout << endl;
 
-        Orc orc;
-        orc.MostrarStatus();
-        batalha.IniciarBatalha(jogador, orc);
+        Lobo lobo;
+        lobo.MostrarStatus();
+        batalha.IniciarBatalha(jogador, lobo);
     }
     
 }

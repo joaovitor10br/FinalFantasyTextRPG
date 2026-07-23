@@ -66,11 +66,11 @@ int Personagem::CalcularDano(const Personagem& inimigo) const{
 
     void Personagem::Descansar(){
 
-        hp = 100;
-        mp = 8;
+        hp = 50;
+        mp = 20;
 
         cout << nome << " entrou na hospedaria" << endl;
-        cout << "HP e MP restaurados";
+        cout << "HP e MP restaurados" << endl;
 
         MostrarStatus();
     };
